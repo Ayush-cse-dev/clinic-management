@@ -1,0 +1,256 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 100vh;
+}
+
+/* ---- Sidebar ---- */
+.sidebar {
+  background: var(--color-pine-900);
+  color: #EAF3F1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-6) var(--sp-4);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0 var(--sp-2) var(--sp-6);
+}
+
+.sidebar-brand-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
+}
+
+.sidebar-brand-tag {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  color: var(--color-pine-100);
+  opacity: 0.7;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  flex: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  color: #CBE0DC;
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.sidebar-link.active {
+  background: var(--color-pine-700);
+  color: #FFFFFF;
+}
+
+.sidebar-link-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.sidebar-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2);
+}
+
+.sidebar-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-coral-500);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+}
+
+.sidebar-user-name {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-user-role {
+  font-size: var(--fs-xs);
+  color: var(--color-pine-100);
+  text-transform: capitalize;
+  opacity: 0.75;
+}
+
+.sidebar-logout {
+  margin-top: var(--sp-3);
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* ---- Topbar + content ---- */
+.main-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-8);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--color-pine-900);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.content {
+  padding: var(--sp-8);
+  flex: 1;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.page-header-eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-coral-600);
+  margin-bottom: var(--sp-1);
+  display: block;
+}
+
+.page-header-sub {
+  color: var(--color-ink-muted);
+  margin-top: var(--sp-1);
+  font-size: var(--fs-sm);
+}
+
+/* ---- Auth split-screen layout ---- */
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.auth-brand-panel {
+  background: var(--color-pine-900);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--sp-12);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-brand-content {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-brand-name {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 600;
+}
+
+.auth-brand-quote {
+  max-width: 420px;
+  font-size: var(--fs-md);
+  color: var(--color-pine-100);
+  line-height: 1.6;
+}
+
+.auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-8);
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (max-width: 900px) {
+  .auth-shell {
+    grid-template-columns: 1fr;
+  }
+  .auth-brand-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+}
